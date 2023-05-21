@@ -74,3 +74,5 @@ E:\Repository\DOTNET\BlazorShop\BlazorShop\BlazorShopApi\obj\Debug\net7.0\refint
 E:\Repository\DOTNET\BlazorShop\BlazorShop\BlazorShopApi\obj\Debug\net7.0\BlazorShopApi.pdb
 E:\Repository\DOTNET\BlazorShop\BlazorShop\BlazorShopApi\obj\Debug\net7.0\BlazorShopApi.genruntimeconfig.cache
 E:\Repository\DOTNET\BlazorShop\BlazorShop\BlazorShopApi\obj\Debug\net7.0\ref\BlazorShopApi.dll
+E:\Repository\DOTNET\BlazorShop\BlazorShop\BlazorShopApi\bin\Debug\net7.0\BlazorShopModels.dll
+E:\Repository\DOTNET\BlazorShop\BlazorShop\BlazorShopApi\bin\Debug\net7.0\BlazorShopModels.pdb

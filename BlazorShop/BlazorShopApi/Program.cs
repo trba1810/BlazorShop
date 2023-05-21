@@ -1,4 +1,6 @@
 using BlazorShopApi.Data;
+using BlazorShopApi.Repositories;
+using BlazorShopApi.Repositories.Contracts;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -12,6 +14,7 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddDbContextPool<ShopOnlineDbContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("ShopOnline"))
 );
+builder.Services.AddScoped<IProductRepository,ProductRepository>();
 
 var app = builder.Build();
 

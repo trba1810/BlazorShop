@@ -1238,6 +1238,16 @@
             "rid": "win"
           }
         }
+      },
+      "BlazorShopModels/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "compile": {
+          "bin/placeholder/BlazorShopModels.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/BlazorShopModels.dll": {}
+        }
       }
     }
   },
@@ -3899,10 +3909,16 @@
         "useSharedDesignerContext.txt",
         "version.txt"
       ]
+    },
+    "BlazorShopModels/1.0.0": {
+      "type": "project",
+      "path": "../BlazorShopModels/BlazorShopModels.csproj",
+      "msbuildProject": "../BlazorShopModels/BlazorShopModels.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net7.0": [
+      "BlazorShopModels >= 1.0.0",
       "Microsoft.AspNetCore.OpenApi >= 7.0.5",
       "Microsoft.EntityFrameworkCore.SqlServer >= 7.0.5",
       "Microsoft.EntityFrameworkCore.Tools >= 7.0.5",
@@ -3942,7 +3958,11 @@
       "frameworks": {
         "net7.0": {
           "targetAlias": "net7.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "E:\\Repository\\DOTNET\\BlazorShop\\BlazorShop\\BlazorShopModels\\BlazorShopModels.csproj": {
+              "projectPath": "E:\\Repository\\DOTNET\\BlazorShop\\BlazorShop\\BlazorShopModels\\BlazorShopModels.csproj"
+            }
+          }
         }
       },
       "warningProperties": {
