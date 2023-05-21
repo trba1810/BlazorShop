@@ -1,13 +1,22 @@
-﻿using BlazorShopApi.Entities;
+﻿using BlazorShopApi.Data;
+using BlazorShopApi.Entities;
 using BlazorShopApi.Repositories.Contracts;
+using Microsoft.EntityFrameworkCore;
 
 namespace BlazorShopApi.Repositories
 {
     public class ProductRepository : IProductRepository
     {
-        public Task<IEnumerable<ProductCategory>> GetCategories()
+        private readonly ShopOnlineDbContext context;
+
+        public ProductRepository(ShopOnlineDbContext context)
         {
-            throw new NotImplementedException();
+            this.context = context;
+        }
+        public async Task<IEnumerable<ProductCategory>> GetCategories()
+        {
+            var categories = await context.ProductCategories.ToListAsync();
+            return categories;
         }
 
         public Task<ProductCategory> GetCategory(int id)
@@ -20,9 +29,10 @@ namespace BlazorShopApi.Repositories
             throw new NotImplementedException();
         }
 
-        public Task<IEnumerable<Product>> GetItems()
+        public async Task<IEnumerable<Product>> GetItems()
         {
-            throw new NotImplementedException();
+            var products = await context.Products.ToListAsync();
+            return products;
         }
     }
 }

@@ -2,7 +2,7 @@
 
 namespace BlazorShopApi.Repositories.Contracts
 {
-    public interface IContractRepository
+    public interface IProductRepository
     {
         Task<IEnumerable<Product>> GetItems();
         Task<IEnumerable<ProductCategory>> GetCategories();
