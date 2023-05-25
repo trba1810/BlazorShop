@@ -826,3 +826,11 @@ E:\Repository\DOTNET\BlazorShop\BlazorShop\BlazorShop\obj\Debug\net7.0\BlazorSho
 E:\Repository\DOTNET\BlazorShop\BlazorShop\BlazorShop\obj\Debug\net7.0\refint\BlazorShop.dll
 E:\Repository\DOTNET\BlazorShop\BlazorShop\BlazorShop\obj\Debug\net7.0\BlazorShop.pdb
 E:\Repository\DOTNET\BlazorShop\BlazorShop\BlazorShop\obj\Debug\net7.0\ref\BlazorShop.dll
+E:\Repository\DOTNET\BlazorShop\BlazorShop\BlazorShop\bin\Debug\net7.0\wwwroot\_framework\BlazorShopModels.dll
+E:\Repository\DOTNET\BlazorShop\BlazorShop\BlazorShop\bin\Debug\net7.0\wwwroot\_framework\BlazorShopModels.pdb
+E:\Repository\DOTNET\BlazorShop\BlazorShop\BlazorShop\bin\Debug\net7.0\wwwroot\_framework\BlazorShopModels.dll.gz
+E:\Repository\DOTNET\BlazorShop\BlazorShop\BlazorShop\bin\Debug\net7.0\wwwroot\_framework\BlazorShopModels.pdb.gz
+E:\Repository\DOTNET\BlazorShop\BlazorShop\BlazorShop\bin\Debug\net7.0\BlazorShopModels.dll
+E:\Repository\DOTNET\BlazorShop\BlazorShop\BlazorShop\bin\Debug\net7.0\BlazorShopModels.pdb
+E:\Repository\DOTNET\BlazorShop\BlazorShop\BlazorShop\obj\Debug\net7.0\build-gz\0ujr8GVK.gz
+E:\Repository\DOTNET\BlazorShop\BlazorShop\BlazorShop\obj\Debug\net7.0\build-gz\WNUEbe0O.gz
