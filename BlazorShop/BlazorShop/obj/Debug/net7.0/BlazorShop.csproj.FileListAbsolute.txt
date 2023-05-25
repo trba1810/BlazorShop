@@ -2,6 +2,8 @@ E:\Repository\DOTNET\BlazorShop\BlazorShop\BlazorShop\bin\Debug\net7.0\wwwroot\_
 E:\Repository\DOTNET\BlazorShop\BlazorShop\BlazorShop\bin\Debug\net7.0\wwwroot\_framework\blazor.webassembly.js
 E:\Repository\DOTNET\BlazorShop\BlazorShop\BlazorShop\bin\Debug\net7.0\wwwroot\_framework\BlazorShop.dll
 E:\Repository\DOTNET\BlazorShop\BlazorShop\BlazorShop\bin\Debug\net7.0\wwwroot\_framework\BlazorShop.pdb
+E:\Repository\DOTNET\BlazorShop\BlazorShop\BlazorShop\bin\Debug\net7.0\wwwroot\_framework\BlazorShopModels.dll
+E:\Repository\DOTNET\BlazorShop\BlazorShop\BlazorShop\bin\Debug\net7.0\wwwroot\_framework\BlazorShopModels.pdb
 E:\Repository\DOTNET\BlazorShop\BlazorShop\BlazorShop\bin\Debug\net7.0\wwwroot\_framework\dotnet.7.0.5.m3j953tu46.js
 E:\Repository\DOTNET\BlazorShop\BlazorShop\BlazorShop\bin\Debug\net7.0\wwwroot\_framework\dotnet.timezones.blat
 E:\Repository\DOTNET\BlazorShop\BlazorShop\BlazorShop\bin\Debug\net7.0\wwwroot\_framework\dotnet.wasm
@@ -212,6 +214,7 @@ E:\Repository\DOTNET\BlazorShop\BlazorShop\BlazorShop\bin\Debug\net7.0\wwwroot\_
 E:\Repository\DOTNET\BlazorShop\BlazorShop\BlazorShop\bin\Debug\net7.0\wwwroot\_framework\System.Runtime.Extensions.dll.gz
 E:\Repository\DOTNET\BlazorShop\BlazorShop\BlazorShop\bin\Debug\net7.0\wwwroot\_framework\System.Net.Requests.dll.gz
 E:\Repository\DOTNET\BlazorShop\BlazorShop\BlazorShop\bin\Debug\net7.0\wwwroot\_framework\System.Text.Encoding.dll.gz
+E:\Repository\DOTNET\BlazorShop\BlazorShop\BlazorShop\bin\Debug\net7.0\wwwroot\_framework\BlazorShopModels.dll.gz
 E:\Repository\DOTNET\BlazorShop\BlazorShop\BlazorShop\bin\Debug\net7.0\wwwroot\_framework\System.ComponentModel.DataAnnotations.dll.gz
 E:\Repository\DOTNET\BlazorShop\BlazorShop\BlazorShop\bin\Debug\net7.0\wwwroot\_framework\netstandard.dll.gz
 E:\Repository\DOTNET\BlazorShop\BlazorShop\BlazorShop\bin\Debug\net7.0\wwwroot\_framework\System.Reflection.Primitives.dll.gz
@@ -370,6 +373,7 @@ E:\Repository\DOTNET\BlazorShop\BlazorShop\BlazorShop\bin\Debug\net7.0\wwwroot\_
 E:\Repository\DOTNET\BlazorShop\BlazorShop\BlazorShop\bin\Debug\net7.0\wwwroot\_framework\System.Collections.Concurrent.dll.gz
 E:\Repository\DOTNET\BlazorShop\BlazorShop\BlazorShop\bin\Debug\net7.0\wwwroot\_framework\Microsoft.AspNetCore.Components.WebAssembly.dll.gz
 E:\Repository\DOTNET\BlazorShop\BlazorShop\BlazorShop\bin\Debug\net7.0\wwwroot\_framework\System.IO.Pipes.dll.gz
+E:\Repository\DOTNET\BlazorShop\BlazorShop\BlazorShop\bin\Debug\net7.0\wwwroot\_framework\BlazorShopModels.pdb.gz
 E:\Repository\DOTNET\BlazorShop\BlazorShop\BlazorShop\bin\Debug\net7.0\wwwroot\_framework\System.Net.Http.Json.dll.gz
 E:\Repository\DOTNET\BlazorShop\BlazorShop\BlazorShop\bin\Debug\net7.0\wwwroot\_framework\Microsoft.JSInterop.WebAssembly.dll.gz
 E:\Repository\DOTNET\BlazorShop\BlazorShop\BlazorShop\bin\Debug\net7.0\wwwroot\_framework\System.Threading.Overlapped.dll.gz
@@ -602,6 +606,8 @@ E:\Repository\DOTNET\BlazorShop\BlazorShop\BlazorShop\bin\Debug\net7.0\icudt.dat
 E:\Repository\DOTNET\BlazorShop\BlazorShop\BlazorShop\bin\Debug\net7.0\icudt_CJK.dat
 E:\Repository\DOTNET\BlazorShop\BlazorShop\BlazorShop\bin\Debug\net7.0\icudt_EFIGS.dat
 E:\Repository\DOTNET\BlazorShop\BlazorShop\BlazorShop\bin\Debug\net7.0\icudt_no_CJK.dat
+E:\Repository\DOTNET\BlazorShop\BlazorShop\BlazorShop\bin\Debug\net7.0\BlazorShopModels.dll
+E:\Repository\DOTNET\BlazorShop\BlazorShop\BlazorShop\bin\Debug\net7.0\BlazorShopModels.pdb
 E:\Repository\DOTNET\BlazorShop\BlazorShop\BlazorShop\obj\Debug\net7.0\BlazorShop.csproj.AssemblyReference.cache
 E:\Repository\DOTNET\BlazorShop\BlazorShop\BlazorShop\obj\Debug\net7.0\BlazorShop.GeneratedMSBuildEditorConfig.editorconfig
 E:\Repository\DOTNET\BlazorShop\BlazorShop\BlazorShop\obj\Debug\net7.0\BlazorShop.AssemblyInfoInputs.cache
@@ -806,6 +812,8 @@ E:\Repository\DOTNET\BlazorShop\BlazorShop\BlazorShop\obj\Debug\net7.0\build-gz\
 E:\Repository\DOTNET\BlazorShop\BlazorShop\BlazorShop\obj\Debug\net7.0\build-gz\J7vkJqMt.gz
 E:\Repository\DOTNET\BlazorShop\BlazorShop\BlazorShop\obj\Debug\net7.0\build-gz\VT0dhd0T.gz
 E:\Repository\DOTNET\BlazorShop\BlazorShop\BlazorShop\obj\Debug\net7.0\build-gz\rDZkqwf4.gz
+E:\Repository\DOTNET\BlazorShop\BlazorShop\BlazorShop\obj\Debug\net7.0\build-gz\0ujr8GVK.gz
+E:\Repository\DOTNET\BlazorShop\BlazorShop\BlazorShop\obj\Debug\net7.0\build-gz\WNUEbe0O.gz
 E:\Repository\DOTNET\BlazorShop\BlazorShop\BlazorShop\obj\Debug\net7.0\build-gz\KZG7b5n0.gz
 E:\Repository\DOTNET\BlazorShop\BlazorShop\BlazorShop\obj\Debug\net7.0\build-gz\a+3Io9c5.gz
 E:\Repository\DOTNET\BlazorShop\BlazorShop\BlazorShop\obj\Debug\net7.0\build-gz\hVDMDraH.gz
@@ -826,11 +834,3 @@ E:\Repository\DOTNET\BlazorShop\BlazorShop\BlazorShop\obj\Debug\net7.0\BlazorSho
 E:\Repository\DOTNET\BlazorShop\BlazorShop\BlazorShop\obj\Debug\net7.0\refint\BlazorShop.dll
 E:\Repository\DOTNET\BlazorShop\BlazorShop\BlazorShop\obj\Debug\net7.0\BlazorShop.pdb
 E:\Repository\DOTNET\BlazorShop\BlazorShop\BlazorShop\obj\Debug\net7.0\ref\BlazorShop.dll
-E:\Repository\DOTNET\BlazorShop\BlazorShop\BlazorShop\bin\Debug\net7.0\wwwroot\_framework\BlazorShopModels.dll
-E:\Repository\DOTNET\BlazorShop\BlazorShop\BlazorShop\bin\Debug\net7.0\wwwroot\_framework\BlazorShopModels.pdb
-E:\Repository\DOTNET\BlazorShop\BlazorShop\BlazorShop\bin\Debug\net7.0\wwwroot\_framework\BlazorShopModels.dll.gz
-E:\Repository\DOTNET\BlazorShop\BlazorShop\BlazorShop\bin\Debug\net7.0\wwwroot\_framework\BlazorShopModels.pdb.gz
-E:\Repository\DOTNET\BlazorShop\BlazorShop\BlazorShop\bin\Debug\net7.0\BlazorShopModels.dll
-E:\Repository\DOTNET\BlazorShop\BlazorShop\BlazorShop\bin\Debug\net7.0\BlazorShopModels.pdb
-E:\Repository\DOTNET\BlazorShop\BlazorShop\BlazorShop\obj\Debug\net7.0\build-gz\0ujr8GVK.gz
-E:\Repository\DOTNET\BlazorShop\BlazorShop\BlazorShop\obj\Debug\net7.0\build-gz\WNUEbe0O.gz

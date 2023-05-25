@@ -199,14 +199,14 @@
       "netstandard.dll": "sha256-OYYuPT3JUknj4LdYIa58zF7kDB3tCnLzjCSuhEjtKXM=",
       "System.Private.CoreLib.dll": "sha256-EVS7zPxPV\/41g2mzPwdXtwiigWxI\/SeAHme1IgyD6tc=",
       "BlazorShopModels.dll": "sha256-csnXgzB\/Iafko50Pk\/Px12lAOR\/ghWPGr0wLzSf\/Ptw=",
-      "BlazorShop.dll": "sha256-pTmiDV1d58Ocqd7A9gQ09lxNzEHpQ8IU1U8ZSPS7qPw="
+      "BlazorShop.dll": "sha256-JOdxvnwbBPUrkbbQTOBmOWEN\/Tsl2RKw5rPZx2doHoA="
     },
     "extensions": null,
     "lazyAssembly": null,
     "libraryInitializers": null,
     "pdb": {
       "BlazorShopModels.pdb": "sha256-fOG4AyrvhZPkwM6\/4TtyEwP6rx802EjHPrZuphyqvNM=",
-      "BlazorShop.pdb": "sha256-3n0iGcVRRO9fF5QnFgrrvwVQ8cyXDIFqegTgs2M+5DQ="
+      "BlazorShop.pdb": "sha256-AIHcDILAzIWGoK8RBzV373Ijjs6aKJiXq\/Q7WXkSvnA="
     },
     "runtime": {
       "dotnet.7.0.5.m3j953tu46.js": "sha256-codB25EodaFEP43MDCfMBuKXU4LqurUKnQrpoMIFnPs=",

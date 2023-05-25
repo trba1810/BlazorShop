@@ -2,6 +2,7 @@ using BlazorShopApi.Data;
 using BlazorShopApi.Repositories;
 using BlazorShopApi.Repositories.Contracts;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Net.Http.Headers;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -25,11 +26,11 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
-app.UseCors(builder => builder
-     .AllowAnyOrigin()
-     .AllowAnyMethod()
-     .AllowAnyHeader()
-     );
+app.UseCors(policy =>
+    policy.WithOrigins("http://localhost:7129", "https://localhost:7129")
+    .AllowAnyMethod()
+    .WithHeaders(HeaderNames.ContentType)
+);
 
 app.UseHttpsRedirection();
 

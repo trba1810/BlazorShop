@@ -1,0 +1,12 @@
+E:\Repository\DOTNET\BlazorShop\BlazorShop\BlazorShopModels\bin\Release\net7.0\BlazorShopModels.deps.json
+E:\Repository\DOTNET\BlazorShop\BlazorShop\BlazorShopModels\bin\Release\net7.0\BlazorShopModels.dll
+E:\Repository\DOTNET\BlazorShop\BlazorShop\BlazorShopModels\bin\Release\net7.0\BlazorShopModels.pdb
+E:\Repository\DOTNET\BlazorShop\BlazorShop\BlazorShopModels\obj\Release\net7.0\BlazorShopModels.csproj.AssemblyReference.cache
+E:\Repository\DOTNET\BlazorShop\BlazorShop\BlazorShopModels\obj\Release\net7.0\BlazorShopModels.GeneratedMSBuildEditorConfig.editorconfig
+E:\Repository\DOTNET\BlazorShop\BlazorShop\BlazorShopModels\obj\Release\net7.0\BlazorShopModels.AssemblyInfoInputs.cache
+E:\Repository\DOTNET\BlazorShop\BlazorShop\BlazorShopModels\obj\Release\net7.0\BlazorShopModels.AssemblyInfo.cs
+E:\Repository\DOTNET\BlazorShop\BlazorShop\BlazorShopModels\obj\Release\net7.0\BlazorShopModels.csproj.CoreCompileInputs.cache
+E:\Repository\DOTNET\BlazorShop\BlazorShop\BlazorShopModels\obj\Release\net7.0\BlazorShopModels.dll
+E:\Repository\DOTNET\BlazorShop\BlazorShop\BlazorShopModels\obj\Release\net7.0\refint\BlazorShopModels.dll
+E:\Repository\DOTNET\BlazorShop\BlazorShop\BlazorShopModels\obj\Release\net7.0\BlazorShopModels.pdb
+E:\Repository\DOTNET\BlazorShop\BlazorShop\BlazorShopModels\obj\Release\net7.0\ref\BlazorShopModels.dll
