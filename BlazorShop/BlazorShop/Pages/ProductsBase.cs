@@ -15,5 +15,15 @@ namespace BlazorShop.Pages
         {
             Products = await ProductService.GetItems();
         }
+
+        protected IOrderedEnumerable<IGrouping<int,ProductDTO>> GetGroupedProductByCategory()
+        {
+            return from product in Products group product by product.CategoryId into prodByCatGroup orderby prodByCatGroup.Key select prodByCatGroup;
+        }
+
+        protected string GetCategoryName(IGrouping<int,ProductDTO> groupedProductDTOs) 
+        {
+            return groupedProductDTOs.FirstOrDefault(pg => pg.CategoryId == groupedProductDTOs.Key).CategoryName;
+        }
     }
 }
