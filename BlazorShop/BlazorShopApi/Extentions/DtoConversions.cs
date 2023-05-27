@@ -24,6 +24,24 @@ namespace BlazorShopApi.Extentions
                     }).ToList();
 
         }
+
+        public static ProductDTO ConvertToDto(this Product product,
+                                                            ProductCategory productCategory)
+        {
+            return new ProductDTO
+            {
+                Id = product.Id,
+                Name = productCategory.Name,
+                Description = product.Description,
+                ImageURL = product.ImageURL,
+                Price = product.Price,
+                Quantity = product.Quantity,
+                CategoryId = product.CategoryId,
+                CategoryName = productCategory.Name
+            };
+
+
+        }
     }
 }
 
