@@ -25,9 +25,10 @@ namespace BlazorShopApi.Repositories
             return category;
         }
 
-        public Task<Product> GetItem(int id)
+        public async Task<Product> GetItem(int id)
         {
-            throw new NotImplementedException();
+            var product = await context.Products.FindAsync(id);
+            return product;
         }
 
         public async Task<IEnumerable<Product>> GetItems()

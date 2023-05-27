@@ -11,9 +11,19 @@ namespace BlazorShop.Pages
 
         public IEnumerable<ProductDTO> Products { get; set; }
 
+        public string ErrorMessage { get; set; }
+
         protected override async Task OnInitializedAsync()
         {
-            Products = await ProductService.GetItems();
+            try
+            {
+                Products = await ProductService.GetItems();
+            }
+            catch (Exception ex)
+            {
+                ErrorMessage = ex.Message;
+
+            }
         }
 
         protected IOrderedEnumerable<IGrouping<int,ProductDTO>> GetGroupedProductByCategory()

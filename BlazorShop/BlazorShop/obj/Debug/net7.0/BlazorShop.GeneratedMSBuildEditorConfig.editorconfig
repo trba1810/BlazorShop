@@ -48,6 +48,10 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRGlzcGxheVByb2R1Y3RzLnJhem9y
 build_metadata.AdditionalFiles.CssScope = b-3ywpcakgmd
 
+[E:/Repository/DOTNET/BlazorShop/BlazorShop/BlazorShop/Pages/DisplaySpinner.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRGlzcGxheVNwaW5uZXIucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = b-kl4mgdrnxc
+
 [E:/Repository/DOTNET/BlazorShop/BlazorShop/BlazorShop/Shared/MainLayout.razor]
 build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXE1haW5MYXlvdXQucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = b-t60nswnymi

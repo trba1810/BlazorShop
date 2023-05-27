@@ -834,3 +834,5 @@ E:\Repository\DOTNET\BlazorShop\BlazorShop\BlazorShop\obj\Debug\net7.0\BlazorSho
 E:\Repository\DOTNET\BlazorShop\BlazorShop\BlazorShop\obj\Debug\net7.0\refint\BlazorShop.dll
 E:\Repository\DOTNET\BlazorShop\BlazorShop\BlazorShop\obj\Debug\net7.0\BlazorShop.pdb
 E:\Repository\DOTNET\BlazorShop\BlazorShop\BlazorShop\obj\Debug\net7.0\ref\BlazorShop.dll
+E:\Repository\DOTNET\BlazorShop\BlazorShop\BlazorShop\obj\Debug\net7.0\scopedcss\Pages\DisplayProducts.razor.rz.scp.css
+E:\Repository\DOTNET\BlazorShop\BlazorShop\BlazorShop\obj\Debug\net7.0\scopedcss\Pages\DisplaySpinner.razor.rz.scp.css
