@@ -15,15 +15,15 @@ namespace BlazorShopApi.Repositories
             this.shopOnlineDbContext = shopOnlineDbContext;
         }
 
-        private async Task<bool> CartItemExists(int cartId,int productId)
+        private async Task<bool> CartItemExists(int cartId, int productId)
         {
-            return await this.shopOnlineDbContext.CartItems.AnyAsync(c=>c.CartId == cartId && c.ProductId == productId);
+            return await this.shopOnlineDbContext.CartItems.AnyAsync(c => c.CartId == cartId && c.ProductId == productId);
 
         }
 
         public async Task<CartItem> AddItem(CartItemToAddDTO cartItemToAddDTO)
         {
-            if(await CartItemExists(cartItemToAddDTO.CartId, cartItemToAddDTO.ProductId)== false)
+            if (await CartItemExists(cartItemToAddDTO.CartId, cartItemToAddDTO.ProductId) == false)
             {
                 var item = await (from product in this.shopOnlineDbContext.Products
                                   where product.Id == cartItemToAddDTO.ProductId
@@ -41,7 +41,7 @@ namespace BlazorShopApi.Repositories
                     return result.Entity;
                 }
             }
-            
+
 
             return null;
         }
@@ -51,14 +51,32 @@ namespace BlazorShopApi.Repositories
             throw new NotImplementedException();
         }
 
-        public Task<CartItem> GetItem(int id)
+        public async Task<CartItem> GetItem(int id)
         {
-            throw new NotImplementedException();
+            return await (from cart in this.shopOnlineDbContext.Carts
+                          join cartItem in this.shopOnlineDbContext.CartItems on cart.Id equals cartItem.CartId
+                          where cartItem.Id == id
+                          select new CartItem
+                          {
+                              Id = cartItem.Id,
+                              ProductId = cartItem.ProductId,
+                              Quantity = cartItem.Quantity,
+                              CartId = cartItem.CartId,
+                          }).SingleOrDefaultAsync();
         }
 
-        public Task<CartItem> GetItems(int userId)
+        public async Task<IEnumerable<CartItem>> GetItems(int userId)
         {
-            throw new NotImplementedException();
+            return await (from cart in this.shopOnlineDbContext.Carts
+                          join cartItem in this.shopOnlineDbContext.CartItems on cart.Id equals cartItem.CartId
+                          where cart.UserId == userId
+                          select new CartItem
+                          {
+                              Id = cartItem.Id,
+                              ProductId = cartItem.ProductId,
+                              Quantity = cartItem.Quantity,
+                              CartId = cartItem.CartId,
+                          }).ToListAsync();
         }
 
         public Task<CartItem> UpdateQuantity(int id, CartItemQtyUpdateDTO cartItemQtyUpdateDTO)

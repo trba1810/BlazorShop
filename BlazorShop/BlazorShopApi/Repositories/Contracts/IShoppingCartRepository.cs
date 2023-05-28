@@ -9,6 +9,6 @@ namespace BlazorShopApi.Repositories.Contracts
         Task<CartItem> UpdateQuantity(int id, CartItemQtyUpdateDTO cartItemQtyUpdateDTO);
         Task<CartItem> DeleteItem(int id);
         Task<CartItem> GetItem(int id);
-        Task<CartItem> GetItems(int userId);
+        Task<IEnumerable<CartItem>> GetItems(int userId);
     }
 }
