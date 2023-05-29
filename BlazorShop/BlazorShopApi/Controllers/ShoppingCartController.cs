@@ -74,5 +74,30 @@ namespace BlazorShopApi.Controllers
             }
         }
 
+        [HttpPost]
+        public async Task<ActionResult<CartItemDTO>> PostItem([FromBody] CartItemToAddDTO cartItemToAddDTO)
+        {
+            try
+            {
+                var newCartItem = await this.shoppingCartRepository.AddItem(cartItemToAddDTO);
+                if(newCartItem == null)
+                {
+                    return NoContent();
+                }
+                var product = await productRepository.GetItem(newCartItem.ProductId);
+                if(product == null)
+                {
+                    throw new Exception($"Product with this {cartItemToAddDTO.ProductId} not found");
+                }
+                var newCartItemDto = newCartItem.ConvertToDto(product);
+                return CreatedAtAction(nameof(GetItem), new { id = newCartItemDto.Id }, newCartItemDto);
+            }
+            catch (Exception ex)
+            {
+
+                return StatusCode(StatusCodes.Status500InternalServerError, ex.Message);
+            }
+        }
+
     }
 }
