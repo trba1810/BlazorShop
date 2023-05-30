@@ -1,5 +1,6 @@
 ﻿using BlazorShop.Services.Contracts;
 using BlazorShopModels.DTOs;
+using System.Net.Http.Json;
 
 namespace BlazorShop.Services
 {
@@ -11,9 +12,30 @@ namespace BlazorShop.Services
         {
             this.httpClient = httpClient;
         }
-        public Task<CartItemDTO> AddItem(CartItemToAddDTO cartItemToAddDTO)
+        public async Task<CartItemDTO> AddItem(CartItemToAddDTO cartItemToAddDTO)
         {
-            throw new NotImplementedException();
+            try
+            {
+                var response = await httpClient.PostAsJsonAsync<CartItemToAddDTO>("/api/ShoppingCart", cartItemToAddDTO);
+                if(response.IsSuccessStatusCode)
+                {
+                    if(response.StatusCode == System.Net.HttpStatusCode.NoContent) 
+                    {
+                        return default(CartItemDTO);
+                    }
+                    return await response.Content.ReadFromJsonAsync<CartItemDTO>();
+                }
+                else
+                {
+                    var message = await response.Content.ReadAsStringAsync();
+                    throw new Exception(message);
+                }
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
         }
 
         public Task<IEnumerable<CartItemDTO>> GetItems(int userId)
