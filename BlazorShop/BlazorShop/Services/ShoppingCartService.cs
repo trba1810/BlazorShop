@@ -38,9 +38,32 @@ namespace BlazorShop.Services
             }
         }
 
-        public Task<IEnumerable<CartItemDTO>> GetItems(int userId)
+        public async Task<IEnumerable<CartItemDTO>> GetItems(int userId)
         {
-            throw new NotImplementedException();
+            try
+            {
+                var response = await httpClient.GetAsync($"api/{userId}/GetItems");
+
+                if(response.IsSuccessStatusCode)
+                {
+                    if (response.StatusCode == System.Net.HttpStatusCode.NoContent)
+                    {
+                        return Enumerable.Empty<CartItemDTO>();
+                    }
+                    return await response.Content.ReadFromJsonAsync<IEnumerable<CartItemDTO>>(); 
+                }
+                else
+                {
+                    var message = await response.Content.ReadAsStringAsync();
+                    throw new Exception(message);
+                }
+
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
         }
     }
 }
