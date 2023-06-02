@@ -15,6 +15,9 @@ namespace BlazorShop.Pages
         [Inject]
         public IShoppingCartService ShoppingCartService { get; set; }
 
+        [Inject]
+        public NavigationManager NavigationManager { get; set; }
+
         public ProductDTO Product { get; set; }
 
         public string ErrorMessage { get; set; }
@@ -37,6 +40,7 @@ namespace BlazorShop.Pages
             try
             {
                 var cartItemDto = await ShoppingCartService.AddItem(cartItemToAddDTO);
+                NavigationManager.NavigateTo("/ShoppingCart");
             }
             catch (Exception)
             {
