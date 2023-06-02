@@ -12,6 +12,9 @@ namespace BlazorShop.Pages
         [Inject]
         public IProductService ProductService { get; set; }
 
+        [Inject]
+        public IShoppingCartService ShoppingCartService { get; set; }
+
         public ProductDTO Product { get; set; }
 
         public string ErrorMessage { get; set; }
@@ -26,6 +29,19 @@ namespace BlazorShop.Pages
             {
 
                 ErrorMessage = ex.Message;
+            }
+        }
+
+        protected async Task AddtoCart_Click(CartItemToAddDTO cartItemToAddDTO)
+        {
+            try
+            {
+                var cartItemDto = await ShoppingCartService.AddItem(cartItemToAddDTO);
+            }
+            catch (Exception)
+            {
+
+                throw;
             }
         }
     }
