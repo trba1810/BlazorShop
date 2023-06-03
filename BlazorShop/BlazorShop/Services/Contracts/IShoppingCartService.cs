@@ -6,6 +6,7 @@ namespace BlazorShop.Services.Contracts
     {
         Task<IEnumerable<CartItemDTO>> GetItems(int userId);
         Task<CartItemDTO> AddItem(CartItemToAddDTO cartItemToAddDTO);
+        Task<CartItemDTO> DeleteItem(int id);
 
     }
 }
