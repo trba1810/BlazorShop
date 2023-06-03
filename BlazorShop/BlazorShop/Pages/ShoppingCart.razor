@@ -28,7 +28,7 @@ else
                             <span>Price: <b>@item.Price.ToString("C")</b></span>
                             <div>
                                 <button @onclick="(() => DeleteCartItem_Click(item.Id))" class="btn btn-danger sm">
-                                    Remove
+                                    <i class="fa fa-trash" aria-hidden="true"></i>
                                 </button>
                             </div>
                         </div>
