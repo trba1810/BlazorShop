@@ -56,7 +56,7 @@ namespace BlazorShop.Services
             }
         }
 
-        public async Task<IEnumerable<CartItemDTO>> GetItems(int userId)
+        public async Task<List<CartItemDTO>> GetItems(int userId)
         {
             try
             {
@@ -66,9 +66,9 @@ namespace BlazorShop.Services
                 {
                     if (response.StatusCode == System.Net.HttpStatusCode.NoContent)
                     {
-                        return Enumerable.Empty<CartItemDTO>();
+                        return Enumerable.Empty<CartItemDTO>().ToList();
                     }
-                    return await response.Content.ReadFromJsonAsync<IEnumerable<CartItemDTO>>(); 
+                    return await response.Content.ReadFromJsonAsync<List<CartItemDTO>>(); 
                 }
                 else
                 {

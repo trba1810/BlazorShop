@@ -9,7 +9,7 @@ namespace BlazorShop.Pages
         [Inject]
         public IShoppingCartService ShoppingCartService { get; set; }
 
-        public IEnumerable<CartItemDTO> ShoppingCartItems { get; set; }
+        public List<CartItemDTO> ShoppingCartItems { get; set; }
         public string ErrorMessage { get; private set; }
 
         protected override async Task OnInitializedAsync()
@@ -23,6 +23,25 @@ namespace BlazorShop.Pages
 
                 ErrorMessage = ex.Message;
             }
+        }
+
+        protected async Task DeleteCartItem_Click(int id)
+        {
+            var cartItemDto = await ShoppingCartService.DeleteItem(id);
+
+            RemoveCartItem(id);
+        }
+
+        private CartItemDTO GetCartItem(int id)
+        {
+            return ShoppingCartItems.FirstOrDefault(x => x.Id == id);
+        }
+
+        private void RemoveCartItem(int id)
+        {
+            var cartItemDto = GetCartItem(id);
+
+            ShoppingCartItems.Remove(cartItemDto);
         }
         
     }
