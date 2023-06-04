@@ -126,5 +126,27 @@ namespace BlazorShopApi.Controllers
             }
         }
 
+        [HttpPut]
+        public async Task<ActionResult<CartItemDTO>> UpdateQuantity(int id,CartItemQtyUpdateDTO cartItemQtyUpdateDTO)
+        {
+            try
+            {
+                var cartItem = await this.shoppingCartRepository.UpdateQuantity(id, cartItemQtyUpdateDTO);
+                if(cartItem == null)
+                {
+                    return NotFound();
+                }
+                var product = await productRepository.GetItem(cartItem.ProductId);
+                var cartItemDto = cartItem.ConvertToDto(product);
+
+                return Ok(cartItemDto);
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(StatusCodes.Status500InternalServerError, ex.Message);
+
+            }
+        }
+
     }
 }
