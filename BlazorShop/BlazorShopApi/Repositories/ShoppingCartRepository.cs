@@ -85,14 +85,17 @@ namespace BlazorShopApi.Repositories
                           }).ToListAsync();
         }
 
-        public async Task<CartItem> UpdateQuantity(int id, CartItemQtyUpdateDTO cartItemQtyUpdateDTO)
+        public async Task<CartItem> UpdateQuantity(int id, CartItemQtyUpdateDTO cartItemQtyUpdateDto)
         {
             var item = await this.shopOnlineDbContext.CartItems.FindAsync(id);
-            if (item != null) 
+
+            if (item != null)
             {
-                item.Quantity = cartItemQtyUpdateDTO.Quantity;
+                item.Quantity = cartItemQtyUpdateDto.Quantity;
                 await this.shopOnlineDbContext.SaveChangesAsync();
+                return item;
             }
+
             return null;
         }
     }

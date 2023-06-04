@@ -32,7 +32,7 @@ namespace BlazorShop.Pages
             RemoveCartItem(id);
         }
 
-        protected async Task UpdateQuantity(int id,int quantity)
+        protected async Task UpdateQuantity_Click(int id,int quantity)
         {
             try
             {

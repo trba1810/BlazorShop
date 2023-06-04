@@ -836,3 +836,7 @@ E:\Repository\DOTNET\BlazorShop\BlazorShop\BlazorShop\obj\Debug\net7.0\BlazorSho
 E:\Repository\DOTNET\BlazorShop\BlazorShop\BlazorShop\obj\Debug\net7.0\ref\BlazorShop.dll
 E:\Repository\DOTNET\BlazorShop\BlazorShop\BlazorShop\obj\Debug\net7.0\scopedcss\Pages\DisplayProducts.razor.rz.scp.css
 E:\Repository\DOTNET\BlazorShop\BlazorShop\BlazorShop\obj\Debug\net7.0\scopedcss\Pages\DisplaySpinner.razor.rz.scp.css
+E:\Repository\DOTNET\BlazorShop\BlazorShop\BlazorShop\bin\Debug\net7.0\wwwroot\_framework\Newtonsoft.Json.dll
+E:\Repository\DOTNET\BlazorShop\BlazorShop\BlazorShop\bin\Debug\net7.0\wwwroot\_framework\Newtonsoft.Json.dll.gz
+E:\Repository\DOTNET\BlazorShop\BlazorShop\BlazorShop\bin\Debug\net7.0\Newtonsoft.Json.dll
+E:\Repository\DOTNET\BlazorShop\BlazorShop\BlazorShop\obj\Debug\net7.0\build-gz\3aBSr2iP.gz

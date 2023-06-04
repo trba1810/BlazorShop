@@ -91,21 +91,20 @@ namespace BlazorShop.Services
             try
             {
                 var jsonRequest = JsonConvert.SerializeObject(cartItemQtyUpdateDto);
-                var content = new StringContent(jsonRequest,Encoding.UTF8,"application/json-patch+json");
+                var content = new StringContent(jsonRequest, Encoding.UTF8, "application/json-patch+json");
 
                 var response = await httpClient.PatchAsync($"api/ShoppingCart/{cartItemQtyUpdateDto.CartItemId}", content);
 
-                if(response.IsSuccessStatusCode)
+                 if (response.IsSuccessStatusCode)
                 {
                     return await response.Content.ReadFromJsonAsync<CartItemDTO>();
-
                 }
                 return null;
-                
+
             }
             catch (Exception)
             {
-
+                //Log exception
                 throw;
             }
         }
