@@ -1,6 +1,8 @@
 ﻿using BlazorShop.Services.Contracts;
 using BlazorShopModels.DTOs;
+using Newtonsoft.Json;
 using System.Net.Http.Json;
+using System.Text;
 
 namespace BlazorShop.Services
 {
@@ -81,6 +83,30 @@ namespace BlazorShop.Services
             {
 
                 throw ex;
+            }
+        }
+
+        public async Task<CartItemDTO> UpdateQuantity(CartItemQtyUpdateDTO cartItemQtyUpdateDto)
+        {
+            try
+            {
+                var jsonRequest = JsonConvert.SerializeObject(cartItemQtyUpdateDto);
+                var content = new StringContent(jsonRequest,Encoding.UTF8,"application/json-patch+json");
+
+                var response = await httpClient.PatchAsync($"api/ShoppingCart/{cartItemQtyUpdateDto.CartItemId}", content);
+
+                if(response.IsSuccessStatusCode)
+                {
+                    return await response.Content.ReadFromJsonAsync<CartItemDTO>();
+
+                }
+                return null;
+                
+            }
+            catch (Exception)
+            {
+
+                throw;
             }
         }
     }

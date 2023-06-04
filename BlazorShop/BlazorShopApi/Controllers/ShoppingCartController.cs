@@ -126,7 +126,7 @@ namespace BlazorShopApi.Controllers
             }
         }
 
-        [HttpPut]
+        [HttpPatch("id:int")]
         public async Task<ActionResult<CartItemDTO>> UpdateQuantity(int id,CartItemQtyUpdateDTO cartItemQtyUpdateDTO)
         {
             try

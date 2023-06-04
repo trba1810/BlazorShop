@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "tXDt6no9KBXenmaDqAejx+jB3GQsblYY+0UYlzkQ+E0HatCXBMerfADE+9YErXk3+zwVbJqSNgLlxpBQceNDTA==",
+  "dgSpecHash": "kCkwXPQcJz+zi95AdBKui/v+MmQIDZdMaKg+0+c5DeHeHYCRqyGawrVZJHKKEf0Ed2HzLhHhYef5Vs+qZoMJNQ==",
   "success": true,
   "projectFilePath": "E:\\Repository\\DOTNET\\BlazorShop\\BlazorShop\\BlazorShop\\BlazorShop.csproj",
   "expectedPackageFiles": [
@@ -28,6 +28,7 @@
     "C:\\Users\\TRBA8\\.nuget\\packages\\microsoft.extensions.primitives\\7.0.0\\microsoft.extensions.primitives.7.0.0.nupkg.sha512",
     "C:\\Users\\TRBA8\\.nuget\\packages\\microsoft.jsinterop\\7.0.5\\microsoft.jsinterop.7.0.5.nupkg.sha512",
     "C:\\Users\\TRBA8\\.nuget\\packages\\microsoft.jsinterop.webassembly\\7.0.5\\microsoft.jsinterop.webassembly.7.0.5.nupkg.sha512",
+    "C:\\Users\\TRBA8\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512",
     "C:\\Users\\TRBA8\\.nuget\\packages\\system.io.pipelines\\7.0.0\\system.io.pipelines.7.0.0.nupkg.sha512",
     "C:\\Users\\TRBA8\\.nuget\\packages\\system.text.encodings.web\\7.0.0\\system.text.encodings.web.7.0.0.nupkg.sha512",
     "C:\\Users\\TRBA8\\.nuget\\packages\\system.text.json\\7.0.0\\system.text.json.7.0.0.nupkg.sha512",

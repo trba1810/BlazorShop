@@ -32,6 +32,38 @@ namespace BlazorShop.Pages
             RemoveCartItem(id);
         }
 
+        protected async Task UpdateQuantity(int id,int quantity)
+        {
+            try
+            {
+                if(quantity > 0)
+                {
+                    var updateItemDto = new CartItemQtyUpdateDTO
+                    {
+                        CartItemId = id,
+                        Quantity = quantity
+                    };
+
+                    var returnedUpdatedItemDto = await this.ShoppingCartService.UpdateQuantity(updateItemDto);
+
+                }
+                else
+                {
+                    var item = this.ShoppingCartItems.FirstOrDefault(x => x.Id == id);
+                    if(item != null)
+                    {
+                        item.Quantity = 1;
+                        item.TotalPrice = item.Price;
+                    }
+                }
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
+
         private CartItemDTO GetCartItem(int id)
         {
             return ShoppingCartItems.FirstOrDefault(x => x.Id == id);
@@ -43,6 +75,8 @@ namespace BlazorShop.Pages
 
             ShoppingCartItems.Remove(cartItemDto);
         }
+
+
         
     }
 }
