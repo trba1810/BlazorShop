@@ -1,11 +1,15 @@
 ﻿using BlazorShop.Services.Contracts;
 using BlazorShopModels.DTOs;
 using Microsoft.AspNetCore.Components;
+using Microsoft.JSInterop;
 
 namespace BlazorShop.Pages
 {
     public class ShoppingCartBase : ComponentBase
     {
+        [Inject]
+        public IJSRuntime Js { get;set; }
+
         [Inject]
         public IShoppingCartService ShoppingCartService { get; set; }
 
@@ -20,7 +24,7 @@ namespace BlazorShop.Pages
             try
             {
                 ShoppingCartItems = await ShoppingCartService.GetItems(HardCoded.UserId);
-                CalculateCartSummary();
+                CalculateCartSummaryTotals();
             }
             catch (Exception ex)
             {
@@ -35,53 +39,73 @@ namespace BlazorShop.Pages
 
             RemoveCartItem(id);
 
-            CalculateCartSummary();
+            CalculateCartSummaryTotals();
         }
 
-        protected async Task UpdateQuantity_Click(int id, int quantity)
+        protected async Task UpdateQtyCartItem_Click(int id, int qty)
         {
             try
             {
-                if (quantity > 0)
+                if (qty > 0)
                 {
                     var updateItemDto = new CartItemQtyUpdateDTO
                     {
                         CartItemId = id,
-                        Quantity = quantity
+                        Quantity = qty
                     };
 
-                    var returnedUpdatedItemDto = await this.ShoppingCartService.UpdateQuantity(updateItemDto);
-                    UpdateItemTotalPrice(returnedUpdatedItemDto);
-                    CalculateCartSummary();
+                    var returnedUpdateItemDto = await this.ShoppingCartService.UpdateQuantity(updateItemDto);
+
+                    UpdateItemTotalPrice(returnedUpdateItemDto);
+
+                    CalculateCartSummaryTotals();
+
+                    await MakeUpdateQtyButtonVisible(id, false);
+
 
                 }
                 else
                 {
-                    var item = this.ShoppingCartItems.FirstOrDefault(x => x.Id == id);
+                    var item = this.ShoppingCartItems.FirstOrDefault(i => i.Id == id);
+
                     if (item != null)
                     {
                         item.Quantity = 1;
                         item.TotalPrice = item.Price;
                     }
+
                 }
+
             }
             catch (Exception)
             {
 
                 throw;
             }
+
+        }
+
+        protected async Task UpdateQty_Input(int id)
+        {
+            await MakeUpdateQtyButtonVisible(id, true);
+        }
+
+        private async Task MakeUpdateQtyButtonVisible(int id, bool visible)
+        {
+            await Js.InvokeVoidAsync("MakeUpdateQtyButtonVisible", id, visible);
         }
 
         private void UpdateItemTotalPrice(CartItemDTO cartItemDto)
         {
             var item = GetCartItem(cartItemDto.Id);
+
             if (item != null)
             {
-                item.TotalPrice += cartItemDto.Price * cartItemDto.Quantity;
+                item.TotalPrice = cartItemDto.Price * cartItemDto.Quantity;
             }
-        }
 
-        private void CalculateCartSummary()
+        }
+        private void CalculateCartSummaryTotals()
         {
             SetTotalPrice();
             SetTotalQuantity();
@@ -89,13 +113,13 @@ namespace BlazorShop.Pages
 
         private void SetTotalPrice()
         {
-            TotalPrice = this.ShoppingCartItems.Sum(x => x.TotalPrice).ToString("C");
+            TotalPrice = this.ShoppingCartItems.Sum(p => p.TotalPrice).ToString("C");
         }
-
         private void SetTotalQuantity()
         {
-            TotalQuantity = this.ShoppingCartItems.Sum(x => x.Quantity);
+            TotalQuantity = this.ShoppingCartItems.Sum(p => p.Quantity);
         }
+
 
         private CartItemDTO GetCartItem(int id)
         {

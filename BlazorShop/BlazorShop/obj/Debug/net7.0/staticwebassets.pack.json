@@ -165,6 +165,10 @@
       "PackagePath": "staticwebassets\\index.html"
     },
     {
+      "Id": "E:\\Repository\\DOTNET\\BlazorShop\\BlazorShop\\BlazorShop\\wwwroot\\js\\ShoppingCartFunctions.js",
+      "PackagePath": "staticwebassets\\js\\ShoppingCartFunctions.js"
+    },
+    {
       "Id": "E:\\Repository\\DOTNET\\BlazorShop\\BlazorShop\\BlazorShop\\wwwroot\\sample-data\\weather.json",
       "PackagePath": "staticwebassets\\sample-data\\weather.json"
     },

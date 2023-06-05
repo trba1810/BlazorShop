@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "tv9Kogwzt618j1gRnc52rgm5Gs81A36BCObFZskLWbE=",
+  "Hash": "x0isY2/V1CojycWBzWKOtIKu1zU4osS7R72Qa+1VGSw=",
   "Source": "BlazorShop",
   "BasePath": "/",
   "Mode": "Root",
@@ -7648,6 +7648,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\index.html"
+    },
+    {
+      "Identity": "E:\\Repository\\DOTNET\\BlazorShop\\BlazorShop\\BlazorShop\\wwwroot\\js\\ShoppingCartFunctions.js",
+      "SourceId": "BlazorShop",
+      "SourceType": "Discovered",
+      "ContentRoot": "E:\\Repository\\DOTNET\\BlazorShop\\BlazorShop\\BlazorShop\\wwwroot\\",
+      "BasePath": "/",
+      "RelativePath": "js/ShoppingCartFunctions.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\ShoppingCartFunctions.js"
     },
     {
       "Identity": "E:\\Repository\\DOTNET\\BlazorShop\\BlazorShop\\BlazorShop\\wwwroot\\sample-data\\weather.json",

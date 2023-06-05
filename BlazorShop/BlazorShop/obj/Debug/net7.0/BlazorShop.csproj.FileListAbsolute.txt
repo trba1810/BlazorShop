@@ -840,3 +840,4 @@ E:\Repository\DOTNET\BlazorShop\BlazorShop\BlazorShop\bin\Debug\net7.0\wwwroot\_
 E:\Repository\DOTNET\BlazorShop\BlazorShop\BlazorShop\bin\Debug\net7.0\wwwroot\_framework\Newtonsoft.Json.dll.gz
 E:\Repository\DOTNET\BlazorShop\BlazorShop\BlazorShop\bin\Debug\net7.0\Newtonsoft.Json.dll
 E:\Repository\DOTNET\BlazorShop\BlazorShop\BlazorShop\obj\Debug\net7.0\build-gz\3aBSr2iP.gz
+E:\Repository\DOTNET\BlazorShop\BlazorShop\BlazorShop\obj\Debug\net7.0\scopedcss\Pages\ShoppingCart.razor.rz.scp.css
