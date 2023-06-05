@@ -4,7 +4,7 @@ using Microsoft.AspNetCore.Components;
 
 namespace BlazorShop.Pages
 {
-    public class ShoppingCartBase:ComponentBase
+    public class ShoppingCartBase : ComponentBase
     {
         [Inject]
         public IShoppingCartService ShoppingCartService { get; set; }
@@ -38,11 +38,11 @@ namespace BlazorShop.Pages
             CalculateCartSummary();
         }
 
-        protected async Task UpdateQuantity_Click(int id,int quantity)
+        protected async Task UpdateQuantity_Click(int id, int quantity)
         {
             try
             {
-                if(quantity > 0)
+                if (quantity > 0)
                 {
                     var updateItemDto = new CartItemQtyUpdateDTO
                     {
@@ -51,14 +51,14 @@ namespace BlazorShop.Pages
                     };
 
                     var returnedUpdatedItemDto = await this.ShoppingCartService.UpdateQuantity(updateItemDto);
-
+                    UpdateItemTotalPrice(returnedUpdatedItemDto);
                     CalculateCartSummary();
 
                 }
                 else
                 {
                     var item = this.ShoppingCartItems.FirstOrDefault(x => x.Id == id);
-                    if(item != null)
+                    if (item != null)
                     {
                         item.Quantity = 1;
                         item.TotalPrice = item.Price;
@@ -69,6 +69,15 @@ namespace BlazorShop.Pages
             {
 
                 throw;
+            }
+        }
+
+        private void UpdateItemTotalPrice(CartItemDTO cartItemDto)
+        {
+            var item = GetCartItem(cartItemDto.Id);
+            if (item != null)
+            {
+                item.TotalPrice += cartItemDto.Price * cartItemDto.Quantity;
             }
         }
 
@@ -101,6 +110,6 @@ namespace BlazorShop.Pages
         }
 
 
-        
+
     }
 }
