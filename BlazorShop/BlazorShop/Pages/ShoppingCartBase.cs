@@ -12,11 +12,15 @@ namespace BlazorShop.Pages
         public List<CartItemDTO> ShoppingCartItems { get; set; }
         public string ErrorMessage { get; private set; }
 
+        protected string TotalPrice { get; set; }
+        protected int TotalQuantity { get; set; }
+
         protected override async Task OnInitializedAsync()
         {
             try
             {
                 ShoppingCartItems = await ShoppingCartService.GetItems(HardCoded.UserId);
+                CalculateCartSummary();
             }
             catch (Exception ex)
             {
@@ -30,6 +34,8 @@ namespace BlazorShop.Pages
             var cartItemDto = await ShoppingCartService.DeleteItem(id);
 
             RemoveCartItem(id);
+
+            CalculateCartSummary();
         }
 
         protected async Task UpdateQuantity_Click(int id,int quantity)
@@ -45,6 +51,8 @@ namespace BlazorShop.Pages
                     };
 
                     var returnedUpdatedItemDto = await this.ShoppingCartService.UpdateQuantity(updateItemDto);
+
+                    CalculateCartSummary();
 
                 }
                 else
@@ -62,6 +70,22 @@ namespace BlazorShop.Pages
 
                 throw;
             }
+        }
+
+        private void CalculateCartSummary()
+        {
+            SetTotalPrice();
+            SetTotalQuantity();
+        }
+
+        private void SetTotalPrice()
+        {
+            TotalPrice = this.ShoppingCartItems.Sum(x => x.TotalPrice).ToString("C");
+        }
+
+        private void SetTotalQuantity()
+        {
+            TotalQuantity = this.ShoppingCartItems.Sum(x => x.Quantity);
         }
 
         private CartItemDTO GetCartItem(int id)
