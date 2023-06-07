@@ -13,6 +13,7 @@ namespace BlazorShop.Pages
 
         protected IEnumerable<CartItemDTO> ShoppingCartItems { get; set; }
 
+
         protected int TotalQty { get; set; }
 
         protected string PaymentDescription { get; set; }
@@ -22,13 +23,15 @@ namespace BlazorShop.Pages
         [Inject]
         public IShoppingCartService ShoppingCartService { get; set; }
 
+        protected string DisplayButtons { get; set; } = "block";
+
         protected override async Task OnInitializedAsync()
         {
             try
             {
                 ShoppingCartItems = await ShoppingCartService.GetItems(HardCoded.UserId);
 
-                if (ShoppingCartItems != null)
+                if (ShoppingCartItems != null && ShoppingCartItems.Count() > 0)
                 {
                     Guid orderGuid = Guid.NewGuid();
 
@@ -36,6 +39,10 @@ namespace BlazorShop.Pages
                     TotalQty = ShoppingCartItems.Sum(p => p.Quantity);
                     PaymentDescription = $"O_{HardCoded.UserId}_{orderGuid}";
 
+                }
+                else
+                {
+                    DisplayButtons = "none";
                 }
 
             }
