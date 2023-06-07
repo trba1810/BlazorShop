@@ -47,12 +47,12 @@ namespace BlazorShopApi.Controllers
         }
 
         [HttpGet("{id:int}")]
-        public async Task<ActionResult<ProductDTO>>GetItem(int id)
+        public async Task<ActionResult<ProductDTO>> GetItem(int id)
         {
             try
             {
                 var product = await this.productRepository.GetItem(id);
-                
+
 
                 if (product == null)
                 {
@@ -73,6 +73,25 @@ namespace BlazorShopApi.Controllers
                 return StatusCode(StatusCodes.Status500InternalServerError,
                                 "Error retrieving data from the database");
 
+            }
+        }
+
+        [HttpGet]
+        [Route(nameof(GetProductCategories))]
+        public async Task<ActionResult<IEnumerable<ProductCategory>>> GetProductCategories()
+        {
+            try
+            {
+                var productCategories = await productRepository.GetCategories();
+                var productCategoryDtos = productCategories.ConvertToDto();
+
+                return Ok(productCategoryDtos);
+            }
+            catch (Exception)
+            {
+
+                return StatusCode(StatusCodes.Status500InternalServerError,
+                                 "Error retrieving data from the database");
             }
         }
     }

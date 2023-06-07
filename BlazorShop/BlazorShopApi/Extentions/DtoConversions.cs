@@ -6,6 +6,17 @@ namespace BlazorShopApi.Extentions
 {
     public static class DtoConversions
     {
+
+        public static IEnumerable<ProductCategoryDTO> ConvertToDto(this IEnumerable<ProductCategory> productCategories)
+        {
+            return (from  productCategory in productCategories  select new ProductCategoryDTO
+            {
+                Id = productCategory.Id,
+                Name = productCategory.Name,
+                IconCSS = productCategory.IconCSS,
+            }).ToList(); 
+        }
+
         public static IEnumerable<ProductDTO> ConvertToDto(this IEnumerable<Product> products,
                                                             IEnumerable<ProductCategory> productCategories)
         {
