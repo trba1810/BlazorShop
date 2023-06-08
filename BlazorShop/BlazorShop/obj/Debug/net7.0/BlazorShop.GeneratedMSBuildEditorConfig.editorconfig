@@ -44,6 +44,10 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUHJvZHVjdHMucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
+[E:/Repository/DOTNET/BlazorShop/BlazorShop/BlazorShop/Shared/ProductCategoriesNavMenu.razor]
+build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXFByb2R1Y3RDYXRlZ29yaWVzTmF2TWVudS5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
 [E:/Repository/DOTNET/BlazorShop/BlazorShop/BlazorShop/Shared/SurveyPrompt.razor]
 build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXFN1cnZleVByb21wdC5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
