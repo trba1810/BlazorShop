@@ -4,5 +4,6 @@
 
 /BlazorShop//BlazorShop.sln
 .vs
-/bin
-/obj
+bin
+obj
+/BlazorShop/bin/Debug
