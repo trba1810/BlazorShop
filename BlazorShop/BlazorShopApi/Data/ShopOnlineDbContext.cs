@@ -308,7 +308,7 @@ namespace BlazorShopApi.Data
             {
                 Id = 4,
                 Name = "Shoes",
-                IconCSS = "fas fa-shoe-print"
+                IconCSS = "fas fa-shoe-prints"
             });
 
 
