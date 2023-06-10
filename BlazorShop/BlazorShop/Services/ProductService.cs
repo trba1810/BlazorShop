@@ -93,5 +93,34 @@ namespace BlazorShop.Services
                 throw;
             }
         }
+
+        public async Task<IEnumerable<ProductDTO>> GetItemsByCategory(int categoryId)
+        {
+            try
+            {
+                var response = await httpClient.GetAsync($"api/Product/{categoryId}/GetItemsByCategory");
+
+                if (response.IsSuccessStatusCode)
+                {
+                    if (response.StatusCode == System.Net.HttpStatusCode.NoContent)
+                    {
+                        return Enumerable.Empty<ProductDTO>();
+                    }
+
+                    return await response.Content.ReadFromJsonAsync<IEnumerable<ProductDTO>>();
+                }
+                else
+                {
+                    var message = await response.Content.ReadAsStringAsync();
+                    throw new Exception(message);
+                }
+
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
     }
 }
