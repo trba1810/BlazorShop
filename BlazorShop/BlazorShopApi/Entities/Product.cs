@@ -1,4 +1,6 @@
-﻿namespace BlazorShopApi.Entities
+﻿using System.ComponentModel.DataAnnotations.Schema;
+
+namespace BlazorShopApi.Entities
 {
     public class Product
     {
@@ -9,6 +11,9 @@
         public decimal Price { get; set; }
         public int Quantity { get; set; }
         public int CategoryId { get; set; }
+
+        [ForeignKey("CategoryId")]
+        public ProductCategory ProductCategory { get; set; }
 
     }
 }
