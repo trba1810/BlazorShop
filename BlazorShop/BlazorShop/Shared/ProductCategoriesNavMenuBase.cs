@@ -17,11 +17,10 @@ namespace BlazorShop.Shared
         {
             try
             {
-                ProductCategoryDtos = await ProductService.GetCategories();
+                ProductCategoryDtos = await ProductService.GetProductCategories();
             }
             catch (Exception ex)
             {
-
                 ErrorMessage = ex.Message;
             }
         }

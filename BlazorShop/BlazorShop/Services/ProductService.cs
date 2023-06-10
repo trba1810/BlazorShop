@@ -13,7 +13,7 @@ namespace BlazorShop.Services
             this.httpClient = httpClient;
         }
 
-        public async Task<IEnumerable<ProductCategoryDTO>> GetCategories()
+        public async Task<IEnumerable<ProductCategoryDTO>> GetProductCategories()
         {
             try
             {
@@ -106,19 +106,17 @@ namespace BlazorShop.Services
                     {
                         return Enumerable.Empty<ProductDTO>();
                     }
-
                     return await response.Content.ReadFromJsonAsync<IEnumerable<ProductDTO>>();
                 }
                 else
                 {
                     var message = await response.Content.ReadAsStringAsync();
-                    throw new Exception(message);
+                    throw new Exception($"Http Status Code - {response.StatusCode} Message - {message}");
                 }
-
             }
             catch (Exception)
             {
-
+                //Log exception
                 throw;
             }
         }
