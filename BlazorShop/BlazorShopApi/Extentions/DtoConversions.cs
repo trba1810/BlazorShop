@@ -17,12 +17,9 @@ namespace BlazorShopApi.Extentions
             }).ToList(); 
         }
 
-        public static IEnumerable<ProductDTO> ConvertToDto(this IEnumerable<Product> products,
-                                                            IEnumerable<ProductCategory> productCategories)
+        public static IEnumerable<ProductDTO> ConvertToDto(this IEnumerable<Product> products)
         {
             return (from product in products
-                    join productCategory in productCategories
-                    on product.CategoryId equals productCategory.Id
                     select new ProductDTO
                     {
                         Id = product.Id,
@@ -31,25 +28,24 @@ namespace BlazorShopApi.Extentions
                         ImageURL = product.ImageURL,
                         Price = product.Price,
                         Quantity = product.Quantity,
-                        CategoryId = product.CategoryId,
-                        CategoryName = productCategory.Name
+                        CategoryId = product.ProductCategory.Id,
+                        CategoryName = product.ProductCategory.Name
                     }).ToList();
 
         }
 
-        public static ProductDTO ConvertToDto(this Product product,
-                                                            ProductCategory productCategory)
+        public static ProductDTO ConvertToDto(this Product product)
         {
             return new ProductDTO
             {
                 Id = product.Id,
-                Name = productCategory.Name,
+                Name = product.Name,
                 Description = product.Description,
                 ImageURL = product.ImageURL,
                 Price = product.Price,
                 Quantity = product.Quantity,
-                CategoryId = product.CategoryId,
-                CategoryName = productCategory.Name
+                CategoryId = product.ProductCategory.Id,
+                CategoryName = product.ProductCategory.Name
             };
 
 
