@@ -13,6 +13,9 @@ namespace BlazorShop.Pages
         [Inject]
         public IShoppingCartService ShoppingCartService { get; set; }
 
+        [Inject]
+        public IManageCartItemsLocalStorageService ManageCartItemsLocalStorageService { get; set; }
+
         public List<CartItemDTO> ShoppingCartItems { get; set; }
         public string ErrorMessage { get; private set; }
 
@@ -23,7 +26,7 @@ namespace BlazorShop.Pages
         {
             try
             {
-                ShoppingCartItems = await ShoppingCartService.GetItems(HardCoded.UserId);
+                ShoppingCartItems = await ManageCartItemsLocalStorageService.GetCollection();
                 CartChanged();
             }
             catch (Exception ex)
@@ -37,7 +40,7 @@ namespace BlazorShop.Pages
         {
             var cartItemDto = await ShoppingCartService.DeleteItem(id);
 
-            RemoveCartItem(id);
+            await RemoveCartItem(id);
 
             CartChanged();
         }
@@ -56,7 +59,7 @@ namespace BlazorShop.Pages
 
                     var returnedUpdateItemDto = await this.ShoppingCartService.UpdateQuantity(updateItemDto);
 
-                    UpdateItemTotalPrice(returnedUpdateItemDto);
+                    await UpdateItemTotalPrice(returnedUpdateItemDto);
 
                     CartChanged();
 
@@ -95,7 +98,7 @@ namespace BlazorShop.Pages
             await Js.InvokeVoidAsync("MakeUpdateQtyButtonVisible", id, visible);
         }
 
-        private void UpdateItemTotalPrice(CartItemDTO cartItemDto)
+        private async Task UpdateItemTotalPrice(CartItemDTO cartItemDto)
         {
             var item = GetCartItem(cartItemDto.Id);
 
@@ -103,6 +106,8 @@ namespace BlazorShop.Pages
             {
                 item.TotalPrice = cartItemDto.Price * cartItemDto.Quantity;
             }
+
+            await ManageCartItemsLocalStorageService.SaveCollection(ShoppingCartItems);
 
         }
         private void CalculateCartSummaryTotals()
@@ -126,11 +131,13 @@ namespace BlazorShop.Pages
             return ShoppingCartItems.FirstOrDefault(x => x.Id == id);
         }
 
-        private void RemoveCartItem(int id)
+        private async Task RemoveCartItem(int id)
         {
             var cartItemDto = GetCartItem(id);
 
             ShoppingCartItems.Remove(cartItemDto);
+
+            await ManageCartItemsLocalStorageService.SaveCollection(ShoppingCartItems);
         }
 
         private void CartChanged()

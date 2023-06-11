@@ -11,6 +11,9 @@ namespace BlazorShop.Pages
         [Inject]
         public IJSRuntime Js { get; set; }
 
+        [Inject]
+        public IManageCartItemsLocalStorageService ManageCartItemsLocalStorageService { get; set; }
+
         protected IEnumerable<CartItemDTO> ShoppingCartItems { get; set; }
 
 
@@ -29,7 +32,7 @@ namespace BlazorShop.Pages
         {
             try
             {
-                ShoppingCartItems = await ShoppingCartService.GetItems(HardCoded.UserId);
+                ShoppingCartItems = await ManageCartItemsLocalStorageService.GetCollection();
 
                 if (ShoppingCartItems != null && ShoppingCartItems.Count() > 0)
                 {
